@@ -33,10 +33,17 @@
             <label><input type="radio" name="optradio" value="Friends">Friends</label>
             </div>
             <div class="radio" id="byYourself">
-                <label><input type="radio" name="optradio" value="Co-worker">Co-worker</label>
+                <label><input type="radio" name="optradio" value="Solo">Solo</label>
         </div>     
         </form>
         </div>
+
+           <div class="col-m-6 col-s-6">
+               <h2>Your Zip Code:</h2></div>
+                <div class="panel panel-success">
+                    <div class="panel-body">
+                        <input type="text" name="zipcode" id="zipcode" placeholder="Enter Zip Code Here" required="required">
+                    </div>
                             <!-- options 2  checkbox about the activities-->
         <div >
             <h2>Choose activity:</h2>
@@ -55,19 +62,14 @@
             </div>
             </form>
             <br>
-            <!-- <input type="button" id="buttonClass" value="Submit" onclick="getRadioValue('optradio')"> -->
-            <input type="button" id="buttonClass" value="Ready">
-            
-            <div id="passing_array">
-            </div>
-      </div>
 
-      <div class="col-m-6 col-s-6">
-        <h2>Your Zip Code:</h2></div>
-         <div class="panel panel-success">
-             <div class="panel-body">
-                 <input type="text" name="zipcode" id="zipcode" placeholder="Enter Zip Code Here" required="required">
-             </div>
+            <input type="text" id="input"><br>
+            <input id="add-location" type="submit"  id="buttonClass" value="Submit">
+       
+        <div id="passing_array"> </div>
+       
+        <div id="radioval"></div> </div>
+     
       <br>
 
       <div class="container">
@@ -76,6 +78,20 @@
 
                 <div class="panel panel-success">
                     <div id="FourSquare">Place List of Places to go in here</div>
+                    <!-- Address -->
+                    <div> venues: <span id="address"></span></div>   
+                    <div id ="street"></div>
+                    <div id ="city"></div>
+                    <div id ="country"></div>
+                    <br>
+                    <!-- Latitude and Longitude -->
+                   <div> Lat is :<span  id ="latt1"></span></div>   
+                   <div> Long is :<span  id ="longt1"></span></div>  
+                   <div id ="latt2">
+                </div>
+                <div id="longt2"></div>
+            <div id="map"></div>
+            <div id="result"></div>
                 </div>
             
 

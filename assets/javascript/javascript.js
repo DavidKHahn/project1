@@ -18,6 +18,10 @@
         var withDate_N=["bar","music venue"];
         var withFriendsOptions=["movie theaters","bar"];
         var byYourselfOptions =["yoga","cafe"]
+       //map variables
+       var directionsService;
+       var directionsDisplay;
+
         //document ready function
         $(document).ready(function () {
           /* Get the checkboxes values and radio button values */
@@ -69,7 +73,13 @@
 
         //  }
 
-
+        $("#btn").on("click", function(){
+            initMap();
+            var s = $("#latt1").text() + ',' + $("#longt1").text();
+            var e = $("#latt2").text() + ',' + $("#longt2").text();
+            console.log(directionsService);
+        calculateAndDisplayRoute(directionsService, directionsDisplay,  s, e);
+        });
 
           // Example queryURL 
           $("#add-location").click(function(){
@@ -125,11 +135,66 @@
             // $("#street").text(JSON.stringify(data.response.venues[0].location.formattedAddress[0]));
             // $("#city").text(JSON.stringify(data.response.venues[0].location.formattedAddress[1]));
             // $("#country").text(JSON.stringify(data.response.venues[0].location.formattedAddress[2]));
-           $("#latt1").text(JSON.stringify(data.response.venues[0].location.labeledLatLngs[0].lat));
-           $("#longt1").text(JSON.stringify(data.response.venues[0].location.labeledLatLngs[0].lng));
+            $("#latt1").text(JSON.stringify(data.response.venues[0].location.labeledLatLngs[0].lat));
+            $("#longt1").text(JSON.stringify(data.response.venues[0].location.labeledLatLngs[0].lng));
+            $("#latt2").text(JSON.stringify(data.response.venues[4].location.labeledLatLngs[0].lat));
+            $("#longt2").text(JSON.stringify(data.response.venues[4].location.labeledLatLngs[0].lng));
 
             });
 
-             })
+             });
+
+            function initMap() {
+            directionsService = new google.maps.DirectionsService;
+            directionsDisplay = new google.maps.DirectionsRenderer;
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: {lat: 33.8358, lng: -118.3406}
+            });
+            directionsDisplay.setMap(map);
     
+            
+            // document.getElementById('start').addEventListener('change', onChangeHandler);
+            // document.getElementById('end').addEventListener('change', onChangeHandler);
+            }
+             
+            function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end) {
+                directionsService.route({
+                  //origin: document.getElementById('latt1').value +','+document.getElementById('longt1'),
+                  //destination: document.getElementById('latt2').value +','+document.getElementById('longt2'),
+                  origin: start,
+                  destination: end,
+                  
+                  travelMode: 'DRIVING'
+                }, function(response, status) {
+                  if (status === 'OK') {
+                    var result = document.getElementById('result');
+                    result.innerHTML= "";
+                    for (var i =0; i < response.routes[0].legs[0].steps.length; i++){
+                        result.innerHTML+=response.routes[0].legs[0].steps[i].instructions+"<br>"
+                    }
+                    console.log(response)
+                    directionsDisplay.setDirections(response);
+                  } else {
+                    window.alert('Directions request failed due to ' + status);
+                  }
+                });
+              }
+
+              function showSteps(directionResult, markerArray, stepDisplay, map) {
+                // For each step, place a marker, and add the text to the marker's infowindow.
+                // Also attach the marker to an array so we can keep track of it and remove it
+                // when calculating new routes.
+                var myRoute = directionResult.routes[0].legs[0];
+                for (var i = 0; i < myRoute.steps.length; i++) {
+                  var marker = markerArray[i] = markerArray[i] || new google.maps.Marker;
+                  marker.setMap(map);
+                  marker.setPosition(myRoute.steps[i].start_location);
+                  attachInstructionText(
+                      stepDisplay, marker, myRoute.steps[i].instructions, map);
+                }
+                console.log( directionResult.routes[0].legs[0])
+              }
+
+
          });

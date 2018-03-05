@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script  type="text/javascript" src="assets/javascript/javascript.js"></script>
-
+        
 </head>
 <body>
 <div class="container">
@@ -28,13 +27,13 @@
             <div class="radio" id="withDate">
             <label><input type="radio" name="optradio" value ="Date Night" checked>Date</label>
             </div>
-            <div class="radio" id="withFriends">
+            <div class="radio" id="withFamily">
             <label><input type="radio" name="optradio" value="Family">Family</label>
             </div>
-            <div class="radio" id="byYourself">
+            <div class="radio" id="withFriends">
             <label><input type="radio" name="optradio" value="Friends">Friends</label>
             </div>
-            <div class="radio" id="byYourself">
+            <div class="radio" id="bySolo">
                 <label><input type="radio" name="optradio" value="Solo">Solo</label>
             </div>     
         </form>
@@ -86,9 +85,9 @@
                     <!-- Latitude and Longitude -->
                    <div> Lat is :<span  id ="latt1"></span></div>   
                    <div> Long is :<span  id ="longt1"></span></div>  
-                   <div id ="latt2">
-                </div>
+                   <div id ="latt2"></div>
                 <div id="longt2"></div>
+                <input type="submit" id="btn" value="Get map and the directions">
             </div>
         </div>
     </div>
@@ -105,6 +104,10 @@
                                         </div>
                                     </div>
                                     
+                                    <script async defer
+                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8F9M5PC9ePqWu6E7wDKRv-YvzSoclJQI&callback=initMap">
+                                    </script>
+                                    <script  type="text/javascript" src="assets/javascript/javascript.js"></script>
 
 </body>
 

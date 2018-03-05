@@ -73,6 +73,51 @@
 
         //  }
 
+    // create a function for radio and chcek box values
+     $.printvenue = function(){
+        for( var i=0; i < valu.length +1; i++){
+            if ((radio_button_value === "Date Night") && (valu[i] === "Recreation")){
+                console.log("Yes its a date night & recreation");
+            }else if((radio_button_value === "Family") && (valu[i] === "Recreation")){
+                console.log("Yes its a family outing & recreation")
+            }else if((radio_button_value === "Friends") && (valu[i] === "Recreation")){
+                console.log("Yes its a outing with friends & recreation")
+
+            }else if((radio_button_value === "Co-worker") && (valu[i] === "Recreation")){
+                console.log("Yes its a outing with coworkers & recreation")
+            } else           if ((radio_button_value === "Date Night") && (valu[i] === "Entertainment")){
+                console.log("Yes its a date night & Entertainment");
+            }else if((radio_button_value === "Family") && (valu[i] === "Entertainment")){
+                console.log("Yes its a family outing & Entertainment")
+            }else if((radio_button_value === "Friends") && (valu[i] === "Entertainment")){
+                console.log("Yes its a outing with friends & Entertainment")
+
+            }else if((radio_button_value === "Co-worker") && (valu[i] === "Entertainment")){
+                console.log("Yes its a outing with coworkers & Entertainment")
+            }else           if ((radio_button_value === "Date Night") && (valu[i] === "Food")){
+                console.log("Yes its a date night & Food");
+            }else if((radio_button_value === "Family") && (valu[i] === "Food")){
+                console.log("Yes its a family outing & Food")
+            }else if((radio_button_value === "Friends") && (valu[i] === "Food")){
+                console.log("Yes its a outing with friends & Food")
+
+            }else if((radio_button_value === "Co-worker") && (valu[i] === "Food")){
+                console.log("Yes its a outing with coworkers & Food")
+            } else           if ((radio_button_value === "Date Night") && (valu[i] === "Nightlife")){
+                console.log("Yes its a date night & Nightlife");
+            }else if((radio_button_value === "Family") && (valu[i] === "Nightlife")){
+                console.log("Yes its a family outing & Nightlife")
+            }else if((radio_button_value === "Friends") && (valu[i] === "Nightlife")){
+                console.log("Yes its a outing with friends & Nightlife")
+
+            }else if((radio_button_value === "Co-worker") && (valu[i] === "Nightlife")){
+                console.log("Yes its a outing with coworkers & Nightlife")
+            }
+
+        }
+
+            }
+
         $("#btn").on("click", function(){
             initMap();
             var s = $("#latt1").text() + ',' + $("#longt1").text();
@@ -89,6 +134,8 @@
                 valu.push(getValueUsingClass());
                 $("#radioval").text(radio_button_value);
                 $("#passing_array").text(valu);
+                $.printvenue();
+
    
          
          options="coffee";

@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script  type="text/javascript" src="assets/javascript/javascript.js"></script>
 
 </head>
 <body>
@@ -20,7 +22,7 @@
   </div>
 </div>
 
-    <div>
+    <div class="container">
         <h2>Who are you going with?</h2>
         <form>
             <div class="radio" id="withDate">
@@ -34,18 +36,15 @@
             </div>
             <div class="radio" id="byYourself">
                 <label><input type="radio" name="optradio" value="Solo">Solo</label>
-        </div>     
+            </div>     
         </form>
         </div>
 
-           <div class="col-m-6 col-s-6">
-               <h2>Your Zip Code:</h2></div>
-                <div class="panel panel-success">
-                    <div class="panel-body">
-                        <input type="text" name="zipcode" id="zipcode" placeholder="Enter Zip Code Here" required="required">
-                    </div>
-                            <!-- options 2  checkbox about the activities-->
-        <div >
+
+                    
+        <!-- options 2  checkbox about the activities-->
+        <div   class="container" class="col-m-6 col-s-6">
+       
             <h2>Choose activity:</h2>
             <form>
             <div>
@@ -62,14 +61,14 @@
             </div>
             </form>
             <br>
-
-            <input type="text" id="input"><br>
-            <input id="add-location" type="submit"  id="buttonClass" value="Submit">
+            <h2>Enter Location Here:</h2>
+            <input type="text" id="locationBtn" placeholder="Enter Location Here" ><br>
+            <input id="add-location" type="submit"   value="Submit">
        
         <div id="passing_array"> </div>
        
-        <div id="radioval"></div> </div>
-     
+        <div id="radioval"></div> 
+    </div>
       <br>
 
       <div class="container">
@@ -90,17 +89,20 @@
                    <div id ="latt2">
                 </div>
                 <div id="longt2"></div>
-            <div id="map"></div>
-            <div id="result"></div>
-                </div>
+            </div>
+        </div>
+    </div>
             
 
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-l-12"><h2>Google Map Directions:</h2></div>
-
+                                    <div class="col-l-12"><h2>Google Map Directions:</h2>
+                                        <div id="result"></div>
+                                    </div>
                                     <div class="panel panel-success">
-                                        <div id="GoogleMaps">Place GoogleMaps in here</div>
+                                        <div id="GoogleMaps">Place GoogleMaps in here
+                                            <div id="map"></div>
+                                        </div>
                                     </div>
                                     
 

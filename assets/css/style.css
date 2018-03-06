@@ -12,8 +12,33 @@ body {
   text-align: center;
   
 }
-     
+
+h1 {
+  text-shadow: 3px 2px rgb(10, 238, 238);
+}
+
+h2 {
+  text-shadow: 3px 2px rgb(10, 238, 238);
   
+}
+
+#map {
+  box-sizing: border-box;
+  width: 60%;
+  border: 5px;
+  float: left;
+  height: 800px;
+}
+
+
+#result {
+  box-sizing: border-box;
+  width: 40%;
+  border: 5px;
+  float: left;
+  height: 800px;
+  background: white;
+}
   .container {
     width: 80%;
     max-width: 760px;
@@ -22,18 +47,10 @@ body {
 
 }
 
-/* sumi added */
-#result{
-  background-color: white;
-
-}
 .dis{
   background-color: white;
 }
-#map {
-  height:500px;
-  width: 100%;
-}
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;

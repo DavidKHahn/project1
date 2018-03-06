@@ -22,39 +22,9 @@ h2 {
   
 }
 
-#map {
-  box-sizing: border-box;
-  width: 60%;
-  border: 5px;
-  float: left;
-  height: 800px;
-}
-
-
 #result {
   box-sizing: border-box;
-  width: 40%;
   border: 5px;
-  float: left;
-  height: 800px;
-  background: white;
-}
-
-#map {
-  box-sizing: border-box;
-  width: 60%;
-  border: 5px;
-  float: left;
-  height: 800px;
-}
-
-
-#result {
-  box-sizing: border-box;
-  width: 40%;
-  border: 5px;
-  float: left;
-  height: 800px;
   background: white;
 }
   .container {
@@ -65,15 +35,10 @@ h2 {
 
 }
 
-/* sumi added */
-#result{
-  background-color: red;
 
-}
 #endAddress{
   height:50px;
   color:black;
-  float:left;
 }
 #startAddress{
   height:50px;

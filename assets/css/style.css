@@ -24,12 +24,19 @@ body {
 
 /* sumi added */
 #result{
-  background-color: white;
+  background-color: red;
 
 }
-.dis{
-  background-color: white;
+#endAddress{
+  height:50px;
+  color:black;
+  float:left;
 }
+#startAddress{
+  height:50px;
+  color:black;
+}
+
 #map {
   height:500px;
   width: 100%;

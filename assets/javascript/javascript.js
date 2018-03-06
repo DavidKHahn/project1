@@ -170,7 +170,6 @@ $(document).ready(function () {
       //------>>>>
 
 
-
       $(document).on("click", ".event", function (event) {
 
 
@@ -278,12 +277,23 @@ $(document).ready(function () {
         for (var i = 0; i < response.routes[0].legs[0].steps.length; i++) {
           result.innerHTML += response.routes[0].legs[0].steps[i].instructions + "<br>"
         }
-        console.log(response)
+         
+        var endAddr = $("<div id ='#endAddress'>")
+        endAddr.append(response.routes["0"].legs["0"].end_address);
+        $("#result").prepend(endAddr)
 
-        $("#startAddress").text(response.routes["0"].legs["0"].start_address);
-        $("#endAddress").text(response.routes["0"].legs["0"].end_address);
-        $("#distance").text(response.routes["0"].legs["0"].distance.text);
-        $("#duration").text(response.routes["0"].legs["0"].duration.text);
+        var startAddr = $("<div id = '#startAddress'>")
+        $(startAddr).append(response.routes["0"].legs["0"].start_address);
+        $("#result").prepend(startAddr)
+
+        var distanceDiv = $("<div id='distance'>")
+        $(distanceDiv).append(response.routes["0"].legs["0"].distance.text);
+        $("#result").prepend(distanceDiv)
+        
+        var durationDiv = $("<div id='duration'>")
+        $(durationDiv).append(response.routes["0"].legs["0"].duration.text);
+        $("#result").prepend(durationDiv)
+
         directionsDisplay.setDirections(response);
       }
       else {

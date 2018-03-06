@@ -12,6 +12,25 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         
 </head>
+<style>
+
+      .event{
+        width:450px;
+        
+    }
+ #address .event {
+        background-color:rgba(250, 250, 255, 0.849);
+         border-color:snow;
+    }
+    #address .event:hover {
+            box-shadow:    0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            font-size: 20px;
+           
+    }
+   
+   
+   
+</style>
 <body>
 <div class="container">
         
@@ -23,7 +42,7 @@
 
     <div class="container">
         <h2>Who are you going with?</h2>
-        <form>
+        <form class="form1">
             <div class="radio" id="withDate">
             <label><input type="radio" name="optradio" value ="Date Night" checked>Date</label>
             </div>
@@ -45,7 +64,7 @@
         <div   class="container" class="col-m-6 col-s-6">
        
             <h2>Choose activity:</h2>
-            <form>
+            <form class="form2">
             <div>
                 <label><input type="checkbox" class="chk" value="Recreation">Recreation</label>
             </div>
@@ -63,7 +82,6 @@
             <h2>Enter Location Here:</h2>
             <input type="text" id="locationBtn" placeholder="Enter Location Here" ><br>
             <input id="add-location" type="submit"   value="Submit">
-       
         <div id="passing_array"> </div>
        
         <div id="radioval"></div> 
@@ -94,9 +112,12 @@
 
         <div id="map"></div>
         <div id="result"></div>
+<script>
 
+ 
+</script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8F9M5PC9ePqWu6E7wDKRv-YvzSoclJQI&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8F9M5PC9ePqWu6E7wDKRv-YvzSoclJQI&callback">
     </script>
     <script  type="text/javascript" src="assets/javascript/javascript.js"></script>
 

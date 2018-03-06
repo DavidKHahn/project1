@@ -123,14 +123,7 @@ $(document).ready(function () {
   }
 
 
-  ///---->>>>>dublicate 
-  $("#btn").on("click", function () {
-    initMap();
-    var s = $("#latt1").text() + ',' + $("#longt1").text();
-    var e = $("#latt2").text() + ',' + $("#longt2").text();
-    console.log(directionsService);
-    calculateAndDisplayRoute(directionsService, directionsDisplay, s, e);
-  });
+
 
   // Example queryURL 
   $("#add-location").click(function () {

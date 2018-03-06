@@ -25,7 +25,7 @@
         <h2>Who are you going with?</h2>
         <form>
             <div class="radio" id="withDate">
-            <label><input type="radio" name="optradio" value ="Date Night" checked>Date</label>
+            <label><input type="radio" name="optradio" value ="Date" checked>Date</label>
             </div>
             <div class="radio" id="withFamily">
             <label><input type="radio" name="optradio" value="Family">Family</label>
@@ -93,10 +93,21 @@
     </div>
 
         <div id="map"></div>
-        <div id="result"></div>
+        <div id="showresult">
+        <div class="dis"> Start Address :<span id="startAddress"></span></div>
+        <div class="dis"> End Address : <span id="endAddress"></span></div>
+        <div class="dis"> Distance : <span id="distance"></span></div>
+        <div class="dis"> Duration :<span id="duration"></span></div>
+        <br>
+        <div id="result"></div> 
+        </div>
 
+
+
+
+        
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8F9M5PC9ePqWu6E7wDKRv-YvzSoclJQI&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD3knTMDQf21rIECYvz9UF-pF3zarsfBE&callback">
     </script>
     <script  type="text/javascript" src="assets/javascript/javascript.js"></script>
 

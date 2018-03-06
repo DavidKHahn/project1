@@ -165,16 +165,18 @@
                 console.log("Inside the loop"+JSON.stringify( data_venues[i].name));
             //    $("#address").append(data_venues[i].name);
                 // $("#street").append(data_venues[i].location.formattedAddress[0]);
-                addressDiv=$("<br><div>"+ "Name is : "+ data_venues[i].name+"</div>");
+             addressDiv=$("<br><button class='event' id='"+data_venues[i].name+"'><div>"+ "Name is : "+ data_venues[i].name+"</div>");
                 dynamicStreet=$("<div>").text("Street is : "+data_venues[i].location.formattedAddress[0]);
                 dynamicCity=$("<div>").text("City is : "+data_venues[i].location.formattedAddress[1]);
                 dynamiccountry=$("<div>").text("Country  is : "+data_venues[i].location.formattedAddress[2]);
                 addressDiv.append(dynamicStreet,dynamicCity,dynamiccountry);
                 $("#address").append(addressDiv);
-                
-
-
+  
             }
+                  $(document).on("click", ".event", function(event){
+                console.log($(this).attr("id"));
+              })
+                 
             // console.log(data.response.venues["0"].name);
             // console.log("Inside the loop"+ data_venues[0].name);
 

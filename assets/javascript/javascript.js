@@ -69,7 +69,7 @@ $(document).ready(function () {
   $.printvenue = function () {
     for (var i = 0; i < valu.length + 1; i++) {
       if ((radio_button_value === "Date") && (valu[i] === "Recreation")) {
-        // console.log("Yes its a Date & recreation");
+         console.log("Yes its a Date & recreation");
         venueArray = ["gym", "beach"];
       } else if ((radio_button_value === "Family") && (valu[i] === "Recreation")) {
         // console.log("Yes its a family outing & recreation")
@@ -106,7 +106,7 @@ $(document).ready(function () {
         venueArray = ["coffee", "cafe"];
       } else if ((radio_button_value === "Date") && (valu[i] === "Nightlife")) {
         // console.log("Yes its a Date & Nightlife");
-        venueArray = ["music venue", "sports bar"];
+        venueArray = ["sports bar", "movie"];
       } else if ((radio_button_value === "Family") && (valu[i] === "Nightlife")) {
         // console.log("Yes its a family outing & Nightlife");
         venueArray = ["movie", "bowling"];
@@ -118,25 +118,17 @@ $(document).ready(function () {
         venueArray = ["sports bar", "bowling"];
       }
     }
-    //console.log(venueArray);
-    return venueArray;
+   // return venueArray;
   }
 
 
-  ///---->>>>>dublicate 
-  $("#btn").on("click", function () {
-    initMap();
-    var s = $("#latt1").text() + ',' + $("#longt1").text();
-    var e = $("#latt2").text() + ',' + $("#longt2").text();
-    console.log(directionsService);
-    calculateAndDisplayRoute(directionsService, directionsDisplay, s, e);
-  });
+
 
   // Example queryURL 
   $("#add-location").click(function () {
     place = $("#locationBtn").val();
     console.log(place);
-
+    $("#address").empty();
     valu.push(getValueUsingClass());
     $("#radioval").text(radio_button_value);
     $("#passing_array").text(valu);
@@ -144,8 +136,10 @@ $(document).ready(function () {
 
 
 
-    options = venueArray[0];
-    options = "coffee"
+    options = venueArray;
+    console.log( "Printing the venue" +options);
+
+   // options = "coffee"
     var queryURL = "https://api.foursquare.com/v2/venues/search?near=" + place + "&query=" + options + "&v=20150214&m=foursquare&client_secret=UHNKEN2CPRB5IQCW2QMA52HXPXWVKRGXKKXJS1D3KNY020U5&client_id=TE4Q21LQYROBUGJJUAPRZBBOKEPNS5LEAOBWCZ4NMS0JAULJ&limit=5";
 
 
@@ -175,7 +169,6 @@ $(document).ready(function () {
 
 
       //------>>>>
-
 
 
       $(document).on("click", ".event", function (event) {
@@ -285,12 +278,23 @@ $(document).ready(function () {
         for (var i = 0; i < response.routes[0].legs[0].steps.length; i++) {
           result.innerHTML += response.routes[0].legs[0].steps[i].instructions + "<br>"
         }
-        console.log(response)
+         
+        var endAddr = $("<div id ='#endAddress'>")
+        endAddr.append(response.routes["0"].legs["0"].end_address);
+        $("#result").prepend(endAddr)
 
-        $("#startAddress").text(response.routes["0"].legs["0"].start_address);
-        $("#endAddress").text(response.routes["0"].legs["0"].end_address);
-        $("#distance").text(response.routes["0"].legs["0"].distance.text);
-        $("#duration").text(response.routes["0"].legs["0"].duration.text);
+        var startAddr = $("<div id = '#startAddress'>")
+        $(startAddr).append(response.routes["0"].legs["0"].start_address);
+        $("#result").prepend(startAddr)
+
+        var distanceDiv = $("<div id='distance'>")
+        $(distanceDiv).append(response.routes["0"].legs["0"].distance.text);
+        $("#result").prepend(distanceDiv)
+        
+        var durationDiv = $("<div id='duration'>")
+        $(durationDiv).append(response.routes["0"].legs["0"].duration.text);
+        $("#result").prepend(durationDiv)
+
         directionsDisplay.setDirections(response);
       }
       else {
@@ -329,10 +333,7 @@ $(document).ready(function () {
       )
   }
 
-  function getingDynamicLatAndLng() {
 
-
-  }
 
 });
 

@@ -26,12 +26,52 @@ var byYourselfOptions = ["yoga", "cafe"]
 //map variables
 var directionsService;
 var directionsDisplay;
+//firebase configuration
+var database ;
+var radiobtnvalue ="";
+   var checkboxvalue="";
+
+   var config = {
+    apiKey: "AIzaSyCkFVA12HPvKTbzQ9kgyBowundbmrbpRoE",
+    authDomain: "project-1-80e0c.firebaseapp.com",
+    databaseURL: "https://project-1-80e0c.firebaseio.com",
+    projectId: "project-1-80e0c",
+    storageBucket: "",
+    messagingSenderId: "929291068792"
+  };
+  firebase.initializeApp(config);
+  console.log(firebase);
+ database = firebase.database();
+  console.log(" this is database"+database);
+
+  database.ref().on("value", function(snapshot) {
+
+    // Log everything that's coming out of snapshot
+    console.log(snapshot.val());
+    console.log("firebase display"+snapshot.val().radiobtnvalue);
+    console.log("firebase display"+snapshot.val().checkboxvalue);
+    
+    
+    // Change the HTML to reflect
+    $("#radiobtnvalue_display").text(snapshot.val().radiobtnvalue);
+    $("#checkboxvalue_display").text(snapshot.val().checkboxvalue);
+    // Handle the errors
+    }, function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+    });
+
+
 
 
 //document ready function
 $(document).ready(function () {
   getUserLocation();
   $("#showresult").hide();//separate
+
+
+
+
+
 
  //dynamic button next & hides
  var nextbtn = $("<button  id='nextbtn'>Next</button>")
@@ -59,10 +99,11 @@ $("#radibuttons").attr("class", "col-xs-12")
     $("#main-container2").hide()
   $("#inputAddress").show() 
   $(nextbtn2).hide()
- 
-    
-    })
-   })
+  console.log(nextbtn);
+  console.log(nextbtn2);
+ })
+ })
+
 
  
 
@@ -177,10 +218,24 @@ $("#radibuttons").attr("class", "col-xs-12")
     console.log(place);
 
 
+    valu.push(getValueUsingClass());
+    console.log(" trying "+getValueUsingClass());
     $("#radioval").text(radio_button_value);
     $("#passing_array").text(valu);
     $.printvenue();
 
+    //firebase code
+    radiobtnvalue=radio_button_value;
+    checkboxvalue=valu;
+    console.log("firebase"+radiobtnvalue);
+    console.log("firebase"+checkboxvalue);   
+
+    database.ref().set({
+      radiobtnvalue:radiobtnvalue,
+      checkboxvalue:checkboxvalue
+
+
+    })  
 
 
     options = venueArray;

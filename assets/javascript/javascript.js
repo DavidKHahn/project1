@@ -212,8 +212,8 @@ $("#radibuttons").attr("class", "col-xs-12")
   // Example queryURL 
   $("#add-location").click(function () {
     $(addressDiv).remove()
-    var choiceList = $("<h1>'Foursquare's Best Nearby'</h1>")
-    $("#choiceList").append(choiceList)
+    var choiceList = $("<h1>Foursquare's Best Nearby</h1>")
+    $("#choiceList").html(choiceList)
     place = $("#locationBtn").val();
     console.log(place);
 

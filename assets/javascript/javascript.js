@@ -168,7 +168,7 @@ $("#radibuttons").attr("class", "col-xs-12")
   $("#add-location").click(function () {
     place = $("#locationBtn").val();
     console.log(place);
-
+    $("#address").empty();
     valu.push(getValueUsingClass());
     $("#radioval").text(radio_button_value);
     $("#passing_array").text(valu);

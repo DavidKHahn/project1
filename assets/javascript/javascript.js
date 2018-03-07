@@ -180,7 +180,8 @@ $("#radibuttons").attr("class", "col-xs-12")
     console.log( "Printing the venue" +options);
 
    // options = "coffee"
-    var queryURL = "https://api.foursquare.com/v2/venues/search?near=" + place + "&query=recreation&v=20150214&m=foursquare&client_secret=UHNKEN2CPRB5IQCW2QMA52HXPXWVKRGXKKXJS1D3KNY020U5&client_id=TE4Q21LQYROBUGJJUAPRZBBOKEPNS5LEAOBWCZ4NMS0JAULJ&limit=5";
+    var queryURL = "https://api.foursquare.com/v2/venues/search?near=" + place + "&query="+options+"&v=20150214&m=foursquare&client_secret=UHNKEN2CPRB5IQCW2QMA52HXPXWVKRGXKKXJS1D3KNY020U5&client_id=TE4Q21LQYROBUGJJUAPRZBBOKEPNS5LEAOBWCZ4NMS0JAULJ&limit=5";
+
 
 
 

@@ -1,9 +1,10 @@
 body, html {
     height: 100%;
+    width:100%;
 }               
 
 body {
-  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+  width:100%;
   height: 100%; 
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,13 +15,10 @@ body {
 }
      
 h1 {
-  text-shadow: 3px 2px rgb(10, 238, 238);
+  text-shadow: black;
+  box-shadow: black;
 }
 
-h2 {
-  text-shadow: 3px 2px rgb(10, 238, 238);
-  
-}
 
 .panel2 {
   background: rgba(0.3) 
@@ -42,7 +40,28 @@ h2 {
 .event{
   width: 70%;
     margin-top: 1%;
+    width:160px;
+  height:100%;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all .15s linear;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 500;
+  border: 2px solid rgba(49, 38, 38, 0.226);
+  color: #000;
+
 }
+.event:hover{
+  box-shadow: 5px 10px #888888;
+ 
+  height:115%;
+  font-size:20px;
+}
+
 #endAddress{
   height:50px;
   color:black;
@@ -57,12 +76,152 @@ h2 {
   width: 100%;
 }
 /* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+
 .event{
   width: 70%;
     margin-top: 1%;
 }
+
+.nav-sub li{
+  display:inline-block;
+  padding:0.4px;
+
+ margin-left:5px;
+ display: inline-block;
+ padding-left: 15px;
+ margin-left: 15px;
+ line-height: 18px;
+ color: #999;
+ text-decoration: none;
+ border-left: 1px solid white;
+ margin-right:30px;
+ margin-top:40px;
+ margin-bottom:20px;
+
+}
+.nav-sub a{
+  color:white;
+  float:right;
+}
+
+
+
+.navbar-inverse img{
+    width:65px;
+    height:65px;
+    margin-top:15px;
+    margin-right:100px;
+  }
+  
+  #headerP{
+    color:white;
+    margin-left:70px;
+    margin-top: 20px;
+    font-size: 30px;
+    margin-bottom:20px;
+  }
+  #navBar{
+float:right;
+  }
+  #headertext{
+    margin-left:180px;
+  }
+
+  #main-headertext {
+    font-family: ‘Josefin Sans’;
+    src: url(https://fonts.googleapis.com/css?family=Josefin+Sans);
+    font-size: 50px;
+    }
+    
+    #main-headertext:after {
+ 
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color :white;
+    }
+
+     
+    
+    
+ 
+ #add-location{
+  width:160px;
+  height:30px;
+  display: inline-block;
+  
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all .15s linear;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 500;
+  border: 3px solid;
+  color: #000;
+
+ }
+ #add-locatio{
+  opacity: .8;
+  color:white;
+  border:3px solid rgba(41, 39, 39, 0.466);;
+  background: black;
+   
+ }
+ #nextbtn{
+  width:160px;
+  height:30px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all .15s linear;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 500;
+  border: 3px solid;
+  color: #000;
+
+ }
+ #nextbtn:hover{
+  opacity: .8;
+  color:white;
+  border:3px solid rgba(41, 39, 39, 0.466);;
+  background: black;
+   
+ }
+ #nextbtn2{
+  width:160px;
+  height:30px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all .15s linear;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 500;
+  border: 3px solid;
+  color: #000;
+
+ }
+ #nextbtn2:hover{
+  opacity: .8;
+  color:white;
+  border:3px solid rgba(41, 39, 39, 0.466);;
+  background: black;
+   
+ }
+
+ .footer{
+   height:100%;
+   width:100%;
+   
+ 
+   background-color: black;
+   float:right;
+
+ }

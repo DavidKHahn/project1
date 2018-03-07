@@ -22,16 +22,28 @@
         <div class="row">
             <div class="col-xs-4">
                 <h3>Who are you going out with?</h3>
+                <br>
+
+                <div class="radio" id="withFamily">
+                    <label>
+                        <input type="radio" name="optradio" value="Family">Family</label>
+                </div>
+                <div class="radio" id="withFriends">
+                    <label>
+                        <input type="radio" name="optradio" value="Friends">Friends</label>
+                </div>
                 <div class="radio" id="withDate">
                     <label>
                         <input type="radio" name="optradio" value="Date" checked>Date</label>
 
                 </div>
+
                 <div class="radio" id="withFamily">
                     <label>
                         <input type="radio" name="optradio" value="Family">Family</label>
                 </div>
-                <div class="radio" id="bySolo">
+
+               <div class="radio" id="bySolo">
 
                     <label>
                         <input type="radio" name="optradio" value="Solo">Solo</label>
@@ -40,6 +52,7 @@
             </div>
             <div class="col-xs-4">
                 <h3>What are you interested in doing?</h3>
+                <br>
                 <div>
                     <label>
                         <input type="checkbox" class="chk" value="Recreation">Recreation</label>
@@ -59,17 +72,21 @@
             </div>
             <div class="col-xs-4">
                 <h3>Where do you want to go?</h3>
+                <br>
                 <input type="text" id="locationBtn" placeholder="Enter Location Here">
                 <br>
-                <input id="add-location" type="submit" value="Push To Start">
+                <br>
+                <input id="add-location" type="submit" value="push to start" style="color:rgb(255, 196, 0); font-weight: 305; font-size: 20px;text-transform: lowercase">
+
             </div>
         </div>
     </div>
     <br>
     <div class="container">
         <div class="row">
+
             <div class="col-lg-12">
-                <h2>Foursquare's Best Nearby:</h2>
+          <h2>Foursquare's Best Nearby:</h2>
             </div>
             <div class="panel panel-success">
                 <div id="FourSquare"></div>
@@ -86,6 +103,7 @@
     </div>
     <div class="container"></div>
     <div class="row">
+
         <div class=" col-lg-12">
             <div id="map">
             </div>
@@ -107,8 +125,7 @@
 
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8F9M5PC9ePqWu6E7wDKRv-YvzSoclJQI&callback">
-
-    </script>
+   </script>
     <script type="text/javascript" src="assets/javascript/javascript.js"></script>
 
 </body>

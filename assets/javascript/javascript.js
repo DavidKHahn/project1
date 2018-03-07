@@ -33,20 +33,38 @@ $(document).ready(function () {
   getUserLocation();
   $("#showresult").hide();//separate
 
- //dynamic button next
+ //----->>>>dynamic button next & hides
  var nextbtn = $("<button  id='nextbtn'>Next</button>")
  $("#main-container").append(nextbtn)
-
- $("#main-container2").hide()//attr("style", "display :none")//hide second
  $("#inputAddress").hide()
+ $("#main-container2").hide()//attr("style", "display :none")//hide second
+$("#radibuttons").attr("class", "col-xs-12")
 
 
 
  $("#nextbtn").click(function(){
-  $("#inputAddress").show()
-   
-  
+  $("#radibuttons").hide()
+  $("#main-container2").show()
+  $("#main-container2").attr("class", "col-xs-12")
+
+  var nextbtn2 = $("<button  id='nextbtn2'>Nextt</button>")
+  $("#main-container").append(nextbtn2)
+  $(nextbtn).hide()
+  //second next
+
+  $(nextbtn2).click(function(){
+    $("#inputAddress").attr("class", "col-xs-12")
+    
+    $("#main-container2").hide()
+  $("#inputAddress").show() 
+  $(nextbtn2).hide()
  })
+ })
+
+ 
+
+
+
   /* Get the checkboxes values and radio button values */
 
    
@@ -62,7 +80,7 @@ $(document).ready(function () {
  
 
   //check box function
-  function runnext(){
+ 
   function getValueUsingClass() {
     /* declare an checkbox array */
     var chkArray = [];
@@ -82,7 +100,7 @@ $(document).ready(function () {
       alert("Please at least check one of the checkbox");
     }
   }
-}
+ 
 
 
 

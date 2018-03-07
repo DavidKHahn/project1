@@ -47,7 +47,7 @@ $("#radibuttons").attr("class", "col-xs-12")
   $("#main-container2").show()
   $("#main-container2").attr("class", "col-xs-12")
 
-  var nextbtn2 = $("<button  id='nextbtn2'>Next</button>")
+  var nextbtn2 = $("<button  id='nextbtn2'>Nextt</button>")
   $("#main-container").append(nextbtn2)
   $(nextbtn).hide()
   //second next
@@ -72,7 +72,7 @@ $("#radibuttons").attr("class", "col-xs-12")
 
   $('input[name=optradio]').click(function () {
     radio_button_value = $('input[name=optradio]:checked').val();
-    console.log($("AAAAAAAAA:" + 'input[name=optradio]:checked').val());
+    console.log($('input[name=optradio]:checked').val());
     // console.log(radio_button_value);
    
   
@@ -374,4 +374,3 @@ $("#radibuttons").attr("class", "col-xs-12")
   }
 
 });
-

@@ -27,6 +27,7 @@ var byYourselfOptions = ["yoga", "cafe"]
 var directionsService;
 var directionsDisplay;
 
+
 //document ready function
 $(document).ready(function () {
   $("#showresult").hide();
@@ -39,8 +40,9 @@ $(document).ready(function () {
     radio_button_value = $('input[name=optradio]:checked').val();
     console.log($('input[name=optradio]:checked').val());
     // console.log(radio_button_value);
+
   });
-  console.log(radio_button_value);
+ 
 
   //check box function
   function getValueUsingClass() {
@@ -69,7 +71,7 @@ $(document).ready(function () {
   $.printvenue = function () {
     for (var i = 0; i < valu.length + 1; i++) {
       if ((radio_button_value === "Date") && (valu[i] === "Recreation")) {
-         console.log("Yes its a Date & recreation");
+        // console.log("Yes its a Date & recreation");
         venueArray = ["gym", "beach"];
       } else if ((radio_button_value === "Family") && (valu[i] === "Recreation")) {
         // console.log("Yes its a family outing & recreation")
@@ -106,7 +108,7 @@ $(document).ready(function () {
         venueArray = ["coffee", "cafe"];
       } else if ((radio_button_value === "Date") && (valu[i] === "Nightlife")) {
         // console.log("Yes its a Date & Nightlife");
-        venueArray = ["sports bar", "movie"];
+        venueArray = ["music venue", "sports bar"];
       } else if ((radio_button_value === "Family") && (valu[i] === "Nightlife")) {
         // console.log("Yes its a family outing & Nightlife");
         venueArray = ["movie", "bowling"];
@@ -118,7 +120,8 @@ $(document).ready(function () {
         venueArray = ["sports bar", "bowling"];
       }
     }
-   // return venueArray;
+    //console.log(venueArray);
+    return venueArray;
   }
 
 
@@ -128,7 +131,7 @@ $(document).ready(function () {
   $("#add-location").click(function () {
     place = $("#locationBtn").val();
     console.log(place);
-    $("#address").empty();
+
     valu.push(getValueUsingClass());
     $("#radioval").text(radio_button_value);
     $("#passing_array").text(valu);
@@ -136,10 +139,8 @@ $(document).ready(function () {
 
 
 
-    options = venueArray;
-    console.log( "Printing the venue" +options);
-
-   // options = "coffee"
+    options = venueArray[0];
+    options = "coffee"
     var queryURL = "https://api.foursquare.com/v2/venues/search?near=" + place + "&query=" + options + "&v=20150214&m=foursquare&client_secret=UHNKEN2CPRB5IQCW2QMA52HXPXWVKRGXKKXJS1D3KNY020U5&client_id=TE4Q21LQYROBUGJJUAPRZBBOKEPNS5LEAOBWCZ4NMS0JAULJ&limit=5";
 
 
@@ -169,6 +170,7 @@ $(document).ready(function () {
 
 
       //------>>>>
+ 
 
 
       $(document).on("click", ".event", function (event) {
@@ -333,7 +335,10 @@ $(document).ready(function () {
       )
   }
 
+  function getingDynamicLatAndLng() {
 
+
+  }
 
 });
 

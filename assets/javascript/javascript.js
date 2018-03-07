@@ -93,8 +93,9 @@ $("#radibuttons").attr("class", "col-xs-12")
   //second next
 
   $(nextbtn2).click(function(){
+     
+ 
     $("#inputAddress").attr("class", "col-xs-12")
-    
     $("#main-container2").hide()
   $("#inputAddress").show() 
   $(nextbtn2).hide()
@@ -102,6 +103,7 @@ $("#radibuttons").attr("class", "col-xs-12")
   console.log(nextbtn2);
  })
  })
+
 
  
 
@@ -137,6 +139,7 @@ $("#radibuttons").attr("class", "col-xs-12")
     if (selected.length > 0) {
       console.log("You have selected " + selected);
       return selected;
+     
       //alert("You have selected " + selected); 
     } else {
       alert("Please at least check one of the checkbox");
@@ -208,8 +211,12 @@ $("#radibuttons").attr("class", "col-xs-12")
 
   // Example queryURL 
   $("#add-location").click(function () {
+    $(addressDiv).remove()
+    var choiceList = $("<h1>Foursquare's Best Nearby</h1>")
+    $("#choiceList").html(choiceList)
     place = $("#locationBtn").val();
     console.log(place);
+
 
     valu.push(getValueUsingClass());
     console.log(" trying "+getValueUsingClass());
@@ -265,12 +272,13 @@ $("#radibuttons").attr("class", "col-xs-12")
       }
 
 
+
       //------>>>>
  
 
 
       $(document).on("click", ".event", function (event) {
-
+       
 
          e = $(this).attr("id")
       //  navigator.geolocation.getCurrentPosition(success);

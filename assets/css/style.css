@@ -22,6 +22,10 @@ h2 {
   
 }
 
+.panel2 {
+  background: rgba(0.3) 
+}
+
 #result {
   box-sizing: border-box;
   border: 5px;

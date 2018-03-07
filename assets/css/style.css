@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-  text-shadow: 3px 2px rgb(255, 196, 0);
+  text-shadow: 3px 2px rgb(10, 238, 238);
   
 }
 
@@ -35,7 +35,10 @@ h2 {
 
 }
 
-
+.event{
+  width: 70%;
+    margin-top: 1%;
+}
 #endAddress{
   height:50px;
   color:black;

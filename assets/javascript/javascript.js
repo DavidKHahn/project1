@@ -30,22 +30,57 @@ var directionsDisplay;
 
 //document ready function
 $(document).ready(function () {
-  $("#showresult").hide();
+  getUserLocation();
+  $("#showresult").hide();//separate
 
- getUserLocation();
+ //dynamic button next & hides
+ var nextbtn = $("<button  id='nextbtn'>Next</button>")
+ $("#main-container").append(nextbtn)
+ $("#inputAddress").hide()
+ $("#main-container2").hide()//attr("style", "display :none")//hide second
+$("#radibuttons").attr("class", "col-xs-12")
+
+
+
+ $("#nextbtn").click(function(){
+  $("#radibuttons").hide()
+  $("#main-container2").show()
+  $("#main-container2").attr("class", "col-xs-12")
+
+  var nextbtn2 = $("<button  id='nextbtn2'>Nextt</button>")
+  $("#main-container").append(nextbtn2)
+  $(nextbtn).hide()
+  //second next
+
+  $(nextbtn2).click(function(){
+    $("#inputAddress").attr("class", "col-xs-12")
+    
+    $("#main-container2").hide()
+  $("#inputAddress").show() 
+  $(nextbtn2).hide()
+ })
+ })
+
+ 
+
+
+
   /* Get the checkboxes values and radio button values */
 
-
+   
   //radio button function
+
   $('input[name=optradio]').click(function () {
     radio_button_value = $('input[name=optradio]:checked').val();
     console.log($('input[name=optradio]:checked').val());
     // console.log(radio_button_value);
-
+   
+  
   });
  
 
   //check box function
+ 
   function getValueUsingClass() {
     /* declare an checkbox array */
     var chkArray = [];
@@ -60,11 +95,12 @@ $(document).ready(function () {
     if (selected.length > 0) {
       console.log("You have selected " + selected);
       return selected;
-      //alert("You have selected " + selected);	
+      //alert("You have selected " + selected); 
     } else {
       alert("Please at least check one of the checkbox");
     }
   }
+ 
 
 
 
@@ -132,7 +168,7 @@ $(document).ready(function () {
   $("#add-location").click(function () {
     place = $("#locationBtn").val();
     console.log(place);
-    $("#address").empty();
+
     valu.push(getValueUsingClass());
     $("#radioval").text(radio_button_value);
     $("#passing_array").text(valu);

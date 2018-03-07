@@ -10,13 +10,30 @@
         crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<nav class="navbar navbar-inverse">
+    
+<header class="navbar navbar-inverse">
+<div class ="col-xs-2 col-md-2">
     <br>
-    <h1 style="color:white; text-indent: 20px;">Places to go, People to see</h1>
-    <h4 style="color:rgb(255, 196, 0); text-transform: lowercase; text-indent: 35px;">Courtesy of Foursquare and Google Maps</h4>
-    <br>
-</nav>
+    <img class="logoId" src="http://www.warrencountysheriff.org/images/099086-glossy-black-3d-button-icon-map.png" alt="logo"> 
+    <div class ="col-xs-2 col-md-2">
+    <p id="headerP">FindSpot</p>
+</div>
+ </div>
 
+ <div id="headertext"class ="col-xs-4 col-md-4">
+    <h3 id="main-headertext">Lets Find Places</h3>
+  
+ </div>
+ <br>
+ <div id="navBar" class="col-xs-4 col-md-4">
+        <ul class="nav-sub">
+            <li><a href ="index.html">Get Start</a></li>
+            <li><a href ="aboutus.html">About Us</a></li>
+            <li><a href ="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+</header>
+   
 <body>
     <div id='main-container'>
         <div class="row">
@@ -67,15 +84,15 @@
                 <input type="text" id="locationBtn" placeholder="Enter Location Here">
                 <br>
                 <br>
-                <input id="add-location" type="submit" value="push to start" style="color:rgb(255, 196, 0); font-weight: 305; font-size: 20px;text-transform: lowercase">
+                <input id="add-location" type="submit" value="push to start">
             </div>
         </div>
     </div>
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-l-12">
-                <h2>Foursquare's Best Nearby:</h2>
+            <div id="choiceList" class="col-l-12">
+              <h3></h3>
             </div>
             <div class="panel2 panel-success">
                 <div id="FourSquare"></div>
@@ -102,6 +119,7 @@
                     </div>
                 </div>
             </div>
+
           
                 <div id="base">
                 <label >Firebase data stored follwing info : </label>
@@ -109,6 +127,7 @@
                <div id ="checkboxvalue_display"> The palce you went</div>
                </div>
             
+
             <script>
             </script>
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8F9M5PC9ePqWu6E7wDKRv-YvzSoclJQI&callback">

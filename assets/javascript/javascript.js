@@ -30,22 +30,39 @@ var directionsDisplay;
 
 //document ready function
 $(document).ready(function () {
-  $("#showresult").hide();
+  getUserLocation();
+  $("#showresult").hide();//separate
 
- getUserLocation();
+ //dynamic button next
+ var nextbtn = $("<button  id='nextbtn'>Next</button>")
+ $("#main-container").append(nextbtn)
+
+ $("#main-container2").hide()//attr("style", "display :none")//hide second
+ $("#inputAddress").hide()
+
+
+
+ $("#nextbtn").click(function(){
+  $("#inputAddress").show()
+   
+  
+ })
   /* Get the checkboxes values and radio button values */
 
-
+   
   //radio button function
+
   $('input[name=optradio]').click(function () {
     radio_button_value = $('input[name=optradio]:checked').val();
     console.log($('input[name=optradio]:checked').val());
     // console.log(radio_button_value);
-
+   
+  
   });
  
 
   //check box function
+  function runnext(){
   function getValueUsingClass() {
     /* declare an checkbox array */
     var chkArray = [];
@@ -65,6 +82,7 @@ $(document).ready(function () {
       alert("Please at least check one of the checkbox");
     }
   }
+}
 
 
 

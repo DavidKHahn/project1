@@ -281,20 +281,19 @@ $(document).ready(function () {
           result.innerHTML += response.routes[0].legs[0].steps[i].instructions + "<br>"
         }
          
+        var startAddr = $("<div id = '#startAddress'>")
+        $(startAddr).append("Start Address :"+response.routes["0"].legs["0"].start_address);
+        $("#result").prepend(startAddr)
         var endAddr = $("<div id ='#endAddress'>")
-        endAddr.append(response.routes["0"].legs["0"].end_address);
+        endAddr.append("End Addresss: "+response.routes["0"].legs["0"].end_address);
         $("#result").prepend(endAddr)
 
-        var startAddr = $("<div id = '#startAddress'>")
-        $(startAddr).append(response.routes["0"].legs["0"].start_address);
-        $("#result").prepend(startAddr)
-
         var distanceDiv = $("<div id='distance'>")
-        $(distanceDiv).append(response.routes["0"].legs["0"].distance.text);
+        $(distanceDiv).append("Distance: "+response.routes["0"].legs["0"].distance.text);
         $("#result").prepend(distanceDiv)
         
         var durationDiv = $("<div id='duration'>")
-        $(durationDiv).append(response.routes["0"].legs["0"].duration.text);
+        $(durationDiv).append("Duration : "+response.routes["0"].legs["0"].duration.text);
         $("#result").prepend(durationDiv)
 
         directionsDisplay.setDirections(response);

@@ -5,7 +5,7 @@ var options;
 var addressDiv;
 var dynamicStreet;
 var dynamicCity;
-var userPosition;
+var pos;
 var s;
 var e;
 var dynamcilat;
@@ -31,7 +31,8 @@ var directionsDisplay;
 //document ready function
 $(document).ready(function () {
   $("#showresult").hide();
-//  getUserLocation();
+
+ getUserLocation();
   /* Get the checkboxes values and radio button values */
 
 
@@ -139,9 +140,17 @@ $(document).ready(function () {
 
 
 
+<<<<<<< HEAD
     options = venueArray[0];
     options = "coffee"
     var queryURL = "https://api.foursquare.com/v2/venues/search?near=" + place + "&query=" + options + "&v=20150214&m=foursquare&client_secret=UHNKEN2CPRB5IQCW2QMA52HXPXWVKRGXKKXJS1D3KNY020U5&client_id=TE4Q21LQYROBUGJJUAPRZBBOKEPNS5LEAOBWCZ4NMS0JAULJ&limit=5";
+=======
+    options = venueArray;
+    console.log( "Printing the venue" +options);
+
+   // options = "coffee"
+    var queryURL = "https://api.foursquare.com/v2/venues/search?near=" + place + "&query=recreation&v=20150214&m=foursquare&client_secret=UHNKEN2CPRB5IQCW2QMA52HXPXWVKRGXKKXJS1D3KNY020U5&client_id=TE4Q21LQYROBUGJJUAPRZBBOKEPNS5LEAOBWCZ4NMS0JAULJ&limit=5";
+>>>>>>> blockedpostion
 
 
     $.ajax({
@@ -176,17 +185,18 @@ $(document).ready(function () {
       $(document).on("click", ".event", function (event) {
 
 
-        var e = $(this).attr("id")
-        navigator.geolocation.getCurrentPosition(success);
+         e = $(this).attr("id")
+      //  navigator.geolocation.getCurrentPosition(success);
         initMap();
+        s = pos.lat + ',' + pos.lng;
+        calculateAndDisplayRoute(directionsService, directionsDisplay, s, e);
         function success(pos) {
-          var s = pos.coords.latitude + ',' + pos.coords.longitude;
           console.log('Your current position is:');
           console.log("Latitude" + pos.coords.latitude);
           console.log("Longitude" + pos.coords.longitude);
           console.log("More or less  meters" + pos.coords.accuracy);
-          calculateAndDisplayRoute(directionsService, directionsDisplay, s, e);
 
+          calculateAndDisplayRoute(directionsService, directionsDisplay, s, e);
 
         }
 
@@ -229,33 +239,24 @@ $(document).ready(function () {
     });
     directionsDisplay.setMap(map);
     infoWindow = new google.maps.InfoWindow;
-    
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-
-
-        pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-
-        };
-
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
-        infoWindow.open(map);
-        map.setCenter(pos);
-      }, function () {
-        getLocationFromIp();
-      //  handleLocationError(true, infoWindow, map.getCenter());
-      });
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
-
-    // document.getElementById('start').addEventListener('change', onChangeHandler);
-    // document.getElementById('end').addEventListener('change', onChangeHandler);
   }
+
+  function getUserLocation(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+         
+        }, function() {
+            getLocationFromIp();
+
+        });
+      } else {
+
+      } 
+    }
 
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
@@ -326,9 +327,10 @@ $(document).ready(function () {
       url: "http://freegeoip.net/json/",
       method: 'GET'
     }).then(function (data) {
-      userPosition = {
+      pos  = {
         lat: data.latitude,
         lng: data.longitude
+      
       };
     }
       )

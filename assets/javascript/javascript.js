@@ -431,9 +431,5 @@ $("#radibuttons").attr("class", "col-xs-12")
       )
   }
 
-  function getingDynamicLatAndLng() {
-
-
-  }
 
 });
